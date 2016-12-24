@@ -35,3 +35,10 @@
           enabled: yes
       tags:
           - docker-start
+    - name: Add user "{{ ansible_ssh_user }}" to docker group
+      user:
+          name: "{{ ansible_ssh_user }}"
+          append: yes
+          groups: docker
+      tags:
+          - docker-add-group
