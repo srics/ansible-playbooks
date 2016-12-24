@@ -1,0 +1,30 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update package cache
+      apt: 
+          update_cache=yes
+    - name: Install pre-requesite packages
+      apt: name={{item}} state=present
+      with_items:
+          - apt-transport-https 
+          - ca-certificates
+          - linux-image-extra-virtual
+    - name: Install GPG key for the official Docker repository
+      apt_key: 
+          keyserver: hkp://ha.pool.sks-keyservers.net:80
+          id: 58118E89F3A912897C070ADBF76221572C52609D
+          state: present
+    - name: Add docker apt pkg index
+      apt_repository: 
+          repo: "deb https://apt.dockerproject.org/repo ubuntu-xenial main" 
+          state: present 
+          filename: "docker"
+    - name: Update package cache
+      apt: 
+          update_cache=yes
+    - name: Install docker-engine
+      apt: 
+          name: docker-engine 
+          state: present
