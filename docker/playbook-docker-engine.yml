@@ -28,3 +28,10 @@
       apt: 
           name: docker-engine 
           state: present
+    - name: Start docker service
+      service:
+          name: docker
+          state: started
+          enabled: yes
+      tags:
+          - docker-start
