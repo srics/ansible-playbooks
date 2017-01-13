@@ -1,0 +1,4 @@
+# vars file for vnc4
+---
+user: stack
+vnc_geometry: "1900x960"
