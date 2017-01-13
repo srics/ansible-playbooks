@@ -6,3 +6,4 @@
     - { role: vnc4, tags: "vnc4" }
     - { role: git, tags: "git" }
     - { role: docker, tags: "docker" }
+    - { role: kubernetes, tags: "kubernetes" }
