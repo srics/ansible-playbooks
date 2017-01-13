@@ -2,6 +2,7 @@ Ansible Playbooks
 =================
 
 Useful ansible playbooks:
+* docker-engine
+* kubernetes
 * vnc
-* hostname (coming soon)
-* common packages (coming soon)
+* common packages
