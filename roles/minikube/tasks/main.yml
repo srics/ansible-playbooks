@@ -11,10 +11,15 @@
 - name: Install docker-machine
   get_url:
       url: https://github.com/docker/machine/releases/download/{{docker_machine_ver}}/docker-machine-{{ansible_system}}-{{ansible_architecture}}
-      mode: 0644
+      mode: 0755
       dest: /usr/local/bin/docker-machine
 - name: Install docker-machine-kvm-driver
   get_url:
       url: https://github.com/dhiltgen/docker-machine-kvm/releases/download/{{docker_machine_kvm_driver_ver}}/docker-machine-driver-kvm
-      mode: 0644
+      mode: 0755
       dest: /usr/local/bin
+- name: Install minikube
+  get_url:
+      url: https://storage.googleapis.com/minikube/releases/{{minikube_ver}}/minikube-linux-amd64
+      mode: 0755
+      dest: /usr/local/bin/minikube
