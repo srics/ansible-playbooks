@@ -1,0 +1,4 @@
+# vars file for git
+---
+docker_machine_ver: "v0.9.0"
+docker_machine_kvm_driver_ver: "v0.7.0"

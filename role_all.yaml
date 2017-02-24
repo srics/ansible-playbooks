@@ -7,3 +7,4 @@
     - { role: git, tags: "git" }
     - { role: docker, tags: "docker" }
     - { role: kubernetes, tags: "kubernetes" }
+    - { role: minikube, tags: "minikube" }

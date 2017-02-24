@@ -1,0 +1,20 @@
+---
+- name: Update package cache if needed
+  apt:
+      update_cache=yes
+      cache_valid_time=3600
+- name: Install pre-requesite packages
+  apt: name={{item}} state=present
+  with_items:
+      - libvirt-bin
+      - qemu-kvm
+- name: Install docker-machine
+  get_url:
+      url: https://github.com/docker/machine/releases/download/{{docker_machine_ver}}/docker-machine-{{ansible_system}}-{{ansible_architecture}}
+      mode: 0644
+      dest: /usr/local/bin/docker-machine
+- name: Install docker-machine-kvm-driver
+  get_url:
+      url: https://github.com/dhiltgen/docker-machine-kvm/releases/download/{{docker_machine_kvm_driver_ver}}/docker-machine-driver-kvm
+      mode: 0644
+      dest: /usr/local/bin
