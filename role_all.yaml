@@ -8,3 +8,4 @@
     - { role: docker, tags: "docker" }
     - { role: kubernetes, tags: "kubernetes" }
     - { role: minikube, tags: "minikube" }
+    - { role: odl-prereq, tags: "odl-prereq" }
