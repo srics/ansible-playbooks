@@ -23,3 +23,8 @@
       url: https://storage.googleapis.com/minikube/releases/{{minikube_ver}}/minikube-linux-amd64
       mode: 0755
       dest: /usr/local/bin/minikube
+- name: Install kubectl
+  get_url:
+      url: https://storage.googleapis.com/kubernetes-release/release/{{kubectl_ver}}/bin/linux/amd64/kubectl
+      mode: 0755
+      dest: /usr/local/bin/
