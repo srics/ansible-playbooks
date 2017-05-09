@@ -1,0 +1,18 @@
+[user]  
+        email = srics.r@gmail.com
+        name = Sridhar Ramaswamy
+	signingkey = srics.r@gmail.com
+[push]  
+        default = simple
+[gitreview]
+        username = srics-r
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  oneline = log --pretty=oneline
+  la = log --pretty=format:\"%ad %h (%an): %s\" --date=short
+  type = cat-file -t
+  dump = cat-file -p

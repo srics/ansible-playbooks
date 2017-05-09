@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install git package
+      apt: 
+          name: git
+          state: present
+    - name: copy gitconfig
+      copy:
+          src: gitconfig
+          dest: "/home/{{ ansible_ssh_user }}/.gitconfig"
+          owner: "{{ ansible_ssh_user }}"
+          group: "{{ ansible_ssh_user }}"
