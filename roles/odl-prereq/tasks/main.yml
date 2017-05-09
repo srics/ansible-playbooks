@@ -14,7 +14,7 @@
   apt_repository:
       repo: 'deb https://deb.nodesource.com/node_0.10 {{ ansible_distribution_release }} main' 
       state: present
-      filename: "nodejs"
+      filename: "node"
 - name: Update package cache
   apt:
       update_cache=yes
@@ -29,4 +29,11 @@
       - python-psycopg2
       - zip
       - unzip
-      - openjdk-7-jdk
+      - openjdk-8-jdk
+      - dpkg-dev
+      - python-pip
+      - nodejs-legacy
+- name: pip - install required python modules
+  pip:
+      name:
+          - pyhocon
